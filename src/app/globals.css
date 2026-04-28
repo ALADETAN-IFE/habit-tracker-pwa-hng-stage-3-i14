@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --habigreen-light: #43c37b;
+  --habigreen: #2e9e5e;
+  --habiblue: #1b6fa6;
+  --habiteal: #2e7c9e;
+  --habiblue-dark: #174e6e;
+  --habigrey: #6c7a89;
+  --foreground: #174e6e;
+  --background: #f8fafc;
+  --primary: var(--habigreen);
+  --accent: var(--habiblue);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  color: var(--primary);
+  background: var(--habiblue-dark);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--habigreen-light), var(--habigreen));
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+   display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, var(--habigreen), var(--habiblue));
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-accent:hover {
+  background: var(--habiblue-dark);
+}
+
+.card {
+  background: #fff;
+  color: #0f172a; /* dark text inside cards */
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px 0 rgba(27,111,166,0.08);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+
+/* smaller button variant for in-card controls */
+.btn-sm {
+  padding: 0.4rem 0.8rem!important;
+  font-size: 0.95rem;
+}
+
+.small-icon {
+  width: 16px;
+  height: 16px;
 }

@@ -84,7 +84,7 @@ Your **README** should clearly explain:
 
 ---
 
-**[TECHNICAL REQUIREMENTS DOCUMENT](https://docs.google.com/document/d/1Gp2_0pZWWnQbLc6zLS1U4wI6kO8DCC07Ea5JFjOYXlI/edit?tab=t.0#heading=h.ng83bkry08h9)**  
+**[TECHNICAL REQUIREMENTS DOCUMENT](./Habit Tracker PWA Technical Requirements Document.md)**  
 **[AIRTABLE LINK](https://airtable.com/appZPpwy4dtvVBWU4/shrMH9P1zv4TPhvns?C3OrT=recybIJb778Ki3pvS)**  
 **[SUBMISSION LINK](https://docs.google.com/forms/d/e/1FAIpQLSesJx2xrm3ZpxTsAsaEnePcgQQF4ptbZDf7omdTX-LUZvt4eA/viewform?usp=publish-editor)**
 
