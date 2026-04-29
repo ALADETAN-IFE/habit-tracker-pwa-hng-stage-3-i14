@@ -184,7 +184,7 @@ export default function Dashboard() {
               </p>
               <div className="flex gap-2 justify-center">
                 <button
-                  className="btn-primary"
+                  className="btn-primary bg-red-500!"
                   data-testid="confirm-delete-button"
                   onClick={confirmDelete}
                 >

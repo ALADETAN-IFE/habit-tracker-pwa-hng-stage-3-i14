@@ -21,7 +21,7 @@ export default function Modal({ open, onClose, children, ariaLabel }: ModalProps
       data-testid="modal-overlay"
     >
       <div
-        className="bg-white rounded-xl shadow-lg p-6 min-w-[320px] max-w-full relative"
+        className="bg-white rounded-xl shadow-lg p-6 min-w-[320px] max-w-full relative max-sm:w-full"
         onClick={e => e.stopPropagation()}
         data-testid="modal-content"
       >
