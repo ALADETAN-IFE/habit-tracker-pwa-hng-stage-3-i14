@@ -30,7 +30,7 @@ export default function LoginForm() {
   }
 
   return (
-    <div className="centered px-2">
+    <div className="centered px-4">
       <form
         className="card w-full max-w-md"
         style={{ background: "#fff" }}
