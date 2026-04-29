@@ -128,7 +128,7 @@ export default function Dashboard() {
     <div
       data-testid="dashboard-page"
       className="min-h-screen"
-      style={{ padding: "2rem 0" }}
+      style={{ padding: "2rem 0.5rem" }}
     >
       <div className="max-w-2xl mx-auto">
         <div className="flex justify-between items-center mb-4">
@@ -146,7 +146,7 @@ export default function Dashboard() {
             </button>
             <button
               className="btn-accent hover:bg-(--accent)/50!"
-              data-testid="logout-button"
+              data-testid="auth-logout-button"
               onClick={logout}
             >
               Logout
@@ -183,7 +183,7 @@ export default function Dashboard() {
                 <div className="flex gap-2 justify-center">
                   <button
                     className="btn-primary"
-                    data-testid="confirm-delete"
+                    data-testid="confirm-delete-button"
                     onClick={confirmDelete}
                   >
                     Delete

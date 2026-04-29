@@ -33,20 +33,52 @@ export default function SignupForm() {
   }
 
   return (
-    <div className="centered">
-      <form className="card w-full max-w-md" style={{ background: "#fff" }} onSubmit={handleSubmit}>
+    <div className="centered px-2">
+      <form
+        className="card w-full max-w-md"
+        style={{ background: "#fff" }}
+        onSubmit={handleSubmit}
+      >
         <h2 className="text-xl font-semibold mb-4">Sign up</h2>
-        <label className="block mb-2">Email
-          <input data-testid="auth-signup-email" className="w-full border rounded p-2 mt-1" type="email" value={email} onChange={e => setEmail(e.target.value)} required />
+        <label className="block mb-2">
+          Email
+          <input
+            data-testid="auth-signup-email"
+            className="w-full border rounded p-2 mt-1"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </label>
-        <label className="block mb-2">Password
-          <input data-testid="auth-signup-password" className="w-full border rounded p-2 mt-1" type="password" value={password} onChange={e => setPassword(e.target.value)} required />
+        <label className="block mb-2">
+          Password
+          <input
+            data-testid="auth-signup-password"
+            className="w-full border rounded p-2 mt-1"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
         </label>
         {error && <div className="text-red-600 mb-2">{error}</div>}
-        <button data-testid="auth-signup-submit" className="btn-primary w-full mb-2" type="submit">Sign up</button>
+        <button
+          data-testid="auth-signup-submit"
+          className="btn-primary w-full my-2"
+          type="submit"
+        >
+          Sign up
+        </button>
         <div className="text-center text-sm mt-2">
-          Already have an account?{' '}
-          <a href="/login" className="text-blue-700 underline" data-testid="link-to-login">Log in</a>
+          Already have an account?{" "}
+          <a
+            href="/login"
+            className="text-(--primary) no-underline hover:underline"
+            data-testid="link-to-login"
+          >
+            Log in
+          </a>
         </div>
       </form>
     </div>

@@ -34,7 +34,7 @@ export default function HabitForm({ initial = {}, onSave, onCancel }: HabitFormP
           value={name}
           onChange={e => setName(e.target.value)}
           maxLength={60}
-          required
+          // required
         />
       </div>
       <div className="mb-2">
@@ -59,7 +59,7 @@ export default function HabitForm({ initial = {}, onSave, onCancel }: HabitFormP
           <option value="daily">Daily</option>
         </select>
       </div>
-      {error && <div className="text-red-600 mb-2">{error}</div>}
+      {error && <div className="text-red-600 my-2">{error}</div>}
       <div className="flex gap-2 mt-2">
         <button type="submit" className="btn-primary" data-testid="habit-save-button">Save</button>
         {onCancel && <button type="button" className="btn-accent" onClick={onCancel}>Cancel</button>}

@@ -3,7 +3,6 @@ import { Habit } from "@/types/habit";
 import { USERS_KEY, SESSION_KEY, HABITS_KEY, LOADING_KEY } from "./constants";
 
 
-// User helpers
 export function getUsers(): User[] {
   if (typeof window === "undefined") return [];
   const users = localStorage.getItem(USERS_KEY);
@@ -29,7 +28,6 @@ export function clearSession() {
   localStorage.setItem(LOADING_KEY, "true");
 }
 
-// Habit helpers
 export function getHabits(): Habit[] {
   if (typeof window === "undefined") return [];
   const habits = localStorage.getItem(HABITS_KEY);
