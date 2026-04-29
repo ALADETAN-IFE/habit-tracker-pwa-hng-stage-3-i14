@@ -25,6 +25,7 @@ export default function Dashboard() {
   const [editing, setEditing] = useState<string | null>(null);
   const [showForm, setShowForm] = useState<boolean>(false);
   const [deleteId, setDeleteId] = useState<string | null>(null);
+  const [showLogoutConfirmation, setShowLogoutConfirmation] = useState<boolean>(false);
 
   if (!user) return null;
 
@@ -147,7 +148,7 @@ export default function Dashboard() {
             <button
               className="btn-accent hover:bg-(--accent)/50!"
               data-testid="auth-logout-button"
-              onClick={logout}
+              onClick={() => setShowLogoutConfirmation(true)}
             >
               Logout
             </button>
@@ -184,13 +185,43 @@ export default function Dashboard() {
               </p>
               <div className="flex gap-2 justify-center">
                 <button
-                  className="btn-primary bg-red-500!"
+                  className="btn-primary"
                   data-testid="confirm-delete-button"
+                  style={{ background: "lab(55.4814% 75.0732 48.8528)" }}
                   onClick={confirmDelete}
                 >
                   Delete
                 </button>
                 <button className="btn-accent" onClick={cancelDelete}>
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </Modal>
+        )}
+
+        {showLogoutConfirmation && (
+          <Modal
+            open={showLogoutConfirmation}
+            onClose={() => setShowLogoutConfirmation(false)}
+            ariaLabel="Logout Confirmation"
+          >
+            <div className="text-center p-4">
+              <h3 className="text-lg font-bold mb-4 text-black">Logout?</h3>
+              <p className="mb-4">Are you sure you want to logout?</p>
+              <div className="flex gap-2 justify-center">
+                <button
+                  className="btn-primary"
+                  data-testid="confirm-logout-button"
+                  style={{ background: "lab(55.4814% 75.0732 48.8528)" }}
+                  onClick={logout}
+                >
+                  Logout
+                </button>
+                <button
+                  className="btn-accent"
+                  onClick={() => setShowLogoutConfirmation(false)}
+                >
                   Cancel
                 </button>
               </div>
