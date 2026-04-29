@@ -1,4 +1,4 @@
-const CACHE_NAME = "habit-tracker-shell-v1";
+const CACHE_NAME = "habit-tracker-shell-v2";
 const APP_SHELL = [
   "/",
   "/manifest.json",
@@ -16,21 +16,29 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     (async () => {
-      await self.clients.claim();
       const keys = await caches.keys();
       await Promise.all(
         keys
-          .filter((key) => key !== CACHE_NAME)
-          .map((key) => caches.delete(key)),
+        .filter((key) => key !== CACHE_NAME)
+        .map((key) => caches.delete(key)),
       );
+      await self.clients.claim();
     })(),
   );
 });
 
 self.addEventListener("fetch", (event) => {
+  const url = new URL(event.request.url);
+
+  if (url.pathname.startsWith("/_next/") || url.pathname.startsWith("/api/")) {
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
   event.respondWith(
     caches
       .match(event.request)
-      .then((response) => response || fetch(event.request)),
+      .then((cached) => cached || fetch(event.request)),
   );
 });
+
