@@ -9,15 +9,15 @@ import { LOADING_KEY } from "@/lib/constants";
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
-  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
+  const [isCheckingAuth, setIsCheckingAuth] = useState(false);
   const session = getSession();
   const user = getCurrentUser();
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMounted(true);
-
     const timer = setTimeout(() => {
+      setIsCheckingAuth(localStorage.getItem(LOADING_KEY) === "true");
     if (!session || !user) {
         router.replace("/login");
         localStorage.setItem(LOADING_KEY, "true");

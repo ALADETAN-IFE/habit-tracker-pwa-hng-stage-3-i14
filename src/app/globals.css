@@ -28,7 +28,7 @@ body {
   border: none;
   cursor: pointer;
   transition: background 0.2s;
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: center; 
 }
@@ -61,6 +61,12 @@ body {
   box-shadow: 0 2px 12px 0 rgba(27,111,166,0.08);
   padding: 1.25rem;
   margin-bottom: 1.25rem;
+  transition: transform 0.3s ease; 
+} 
+
+.card:hover{
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .centered {

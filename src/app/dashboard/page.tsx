@@ -10,6 +10,7 @@ import HabitForm from "@/components/habits/HabitForm";
 import Modal from "@/components/ui/Modal";
 import { Habit } from "@/types/habit";
 import { useRouter } from "next/navigation";
+import { Plus } from "lucide-react";
 
 function todayISO() {
   return new Date().toISOString().slice(0, 10);
@@ -128,21 +129,21 @@ export default function Dashboard() {
     <div
       data-testid="dashboard-page"
       className="min-h-screen"
-      style={{ padding: "2rem 0.5rem" }}
+      style={{ padding: "2rem 1rem" }}
     >
       <div className="max-w-2xl mx-auto">
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between sm:items-center mb-4 max-sm:flex-col max-sm:gap-2">
           <h2 className="text-2xl font-bold">Your Habits</h2>
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center">
             <button
-              className="btn-primary"
+              className="btn-primary gap-1 inline-flex!"
               data-testid="create-habit-button"
               onClick={() => {
                 setShowForm(true);
                 setEditing(null);
               }}
             >
-              + Add Habit
+              <Plus /> Add Habit
             </button>
             <button
               className="btn-accent hover:bg-(--accent)/50!"

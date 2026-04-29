@@ -15,7 +15,7 @@ export default function HabitCard({ habit, onToggle, onEdit, onDelete, streak, c
         </span>
       </div>
       <p className="mb-2 text-sm text-gray-600">{habit.description}</p>
-      <div className="flex gap-2">
+      <div className="flex gap-2 flex-wrap">
         <button
           className={`btn-primary ${completedToday ? "opacity-70" : ""} gap-1`}
           data-testid={`habit-complete-${slug}`}
