@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description: "Log your habits, track your progress, and build a better life.",
   manifest: "/manifest.json",
   icons: {
-    icon: "/icons/icon-192x192.png",
-    apple: "/icons/icon-192x192.png",
+    icon: "/icons/icon-192.png",
+    apple: "/icons/icon-192.png",
   },
   appleWebApp: {
     capable: true,
