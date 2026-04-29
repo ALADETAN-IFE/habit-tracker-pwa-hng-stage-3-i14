@@ -56,7 +56,6 @@ export default function Dashboard() {
 
   function handleDelete(id: string) {
     setDeleteId(id);
-    setShowForm(true);
   }
 
   function confirmDelete() {
@@ -155,48 +154,50 @@ export default function Dashboard() {
           </div>
         </div>
         {showForm && (
-          <>
-            <Modal
-              open={showForm}
-              onClose={handleCancel}
-              ariaLabel={editing ? "Edit Habit" : "Add Habit"}
-            >
-              <HabitForm
-                initial={editing ? habits.find((h) => h.id === editing) : {}}
-                onSave={handleSaveHabit}
-                onCancel={handleCancel}
-              />
-            </Modal>
-            <Modal
-              open={!!deleteId}
-              onClose={cancelDelete}
-              ariaLabel="Delete Confirmation"
-            >
-              <div className="text-center p-4">
-                <h3 className="text-lg font-bold mb-4 text-black">
-                  Delete this habit?
-                </h3>
-                <p className="mb-4">
-                  Are you sure you want to delete this habit?
-                  <br />
-                  This action cannot be undone.
-                </p>
-                <div className="flex gap-2 justify-center">
-                  <button
-                    className="btn-primary"
-                    data-testid="confirm-delete-button"
-                    onClick={confirmDelete}
-                  >
-                    Delete
-                  </button>
-                  <button className="btn-accent" onClick={cancelDelete}>
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            </Modal>
-          </>
+          <Modal
+            open={showForm}
+            onClose={handleCancel}
+            ariaLabel={editing ? "Edit Habit" : "Add Habit"}
+          >
+            <HabitForm
+              initial={editing ? habits.find((h) => h.id === editing) : {}}
+              onSave={handleSaveHabit}
+              onCancel={handleCancel}
+            />
+          </Modal>
         )}
+
+        {deleteId && (
+          <Modal
+            open={!!deleteId}
+            onClose={cancelDelete}
+            ariaLabel="Delete Confirmation"
+          >
+            <div className="text-center p-4">
+              <h3 className="text-lg font-bold mb-4 text-black">
+                Delete this habit?
+              </h3>
+              <p className="mb-4">
+                Are you sure you want to delete this habit?
+                <br />
+                This action cannot be undone.
+              </p>
+              <div className="flex gap-2 justify-center">
+                <button
+                  className="btn-primary"
+                  data-testid="confirm-delete-button"
+                  onClick={confirmDelete}
+                >
+                  Delete
+                </button>
+                <button className="btn-accent" onClick={cancelDelete}>
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </Modal>
+        )}
+
         {habits.length === 0 ? (
           <div data-testid="empty-state">No habits yet.</div>
         ) : (
