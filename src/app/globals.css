@@ -61,13 +61,7 @@ body {
   box-shadow: 0 2px 12px 0 rgba(27,111,166,0.08);
   padding: 1.25rem;
   margin-bottom: 1.25rem;
-  transition: transform 0.3s ease; 
 } 
-
-.card:hover{
-  transform: scale(1.05);
-  cursor: pointer;
-}
 
 .centered {
   display: flex;

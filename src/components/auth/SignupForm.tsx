@@ -51,7 +51,7 @@ export default function SignupForm() {
             required
           />
         </label>
-        <label className="block mb-2">
+        <label className="block mb-4">
           Password
           <input
             data-testid="auth-signup-password"
@@ -65,7 +65,7 @@ export default function SignupForm() {
         {error && <div className="text-red-600 mb-2">{error}</div>}
         <button
           data-testid="auth-signup-submit"
-          className="btn-primary w-full my-2"
+          className="btn-primary w-full"
           type="submit"
         >
           Sign up

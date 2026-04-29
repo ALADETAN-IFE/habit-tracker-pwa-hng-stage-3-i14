@@ -47,7 +47,7 @@ export default function LoginForm() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-        <label className="block mb-2">
+        <label className="block mb-4">
           Password
           <input
             data-testid="auth-login-password"
@@ -60,7 +60,7 @@ export default function LoginForm() {
         {error && <div className="text-red-600 mb-2">{error}</div>}
         <button
           data-testid="auth-login-submit"
-          className="btn-primary w-full my-2"
+          className="btn-primary w-full"
           type="submit"
         >
           Log in
